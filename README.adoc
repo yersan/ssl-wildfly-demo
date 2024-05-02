@@ -277,10 +277,10 @@ $ curl -k -s https://$(oc get routes/tls-wildfly-demo-frontend  -o jsonpath='{.s
 +
 Now the traffic arrives to the backend microservice also via the secured 8443 port.
 +
-You can also check you cannot access the backend service using TLS without having the backend certificate. For example, trying to access the backend from the frontend por without specifying the certificates fails:
+You can also check you cannot access the backend service using TLS without having the backend certificate. For example, trying to access the backend from the frontend pod without specifying the certificates fails:
 +
 ----
-$ oc rsh tls-wildfly-demo-frontend-685d8df958-gxmvc                                            130 ↵
+$ oc rsh tls-wildfly-demo-frontend-685d8df958-gxmvc
 sh-4.4$ curl -v -k https://tls-wildfly-demo-backend-secure:8443/greetings
 *   Trying 172.30.210.119...
 * TCP_NODELAY set
